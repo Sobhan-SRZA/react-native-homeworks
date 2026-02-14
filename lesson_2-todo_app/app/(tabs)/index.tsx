@@ -1,9 +1,10 @@
-import useTheme from '@/hooks/useTheme'
-import { Link } from 'expo-router'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { Link } from 'expo-router'
+import useTheme from '@/hooks/useTheme'
 
 const HomeScreen = () => {
   const { toggleDarkMode } = useTheme();
+
   return (
     <View style={styles.container}>
       <Text style={styles.content}>HomeScreen</Text>
