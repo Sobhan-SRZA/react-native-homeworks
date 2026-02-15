@@ -1,31 +1,28 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { StatusBar, Text, TouchableOpacity } from 'react-native'
 import { Link } from 'expo-router'
 import useTheme from '@/hooks/useTheme'
+import { LinearGradient } from 'expo-linear-gradient'
+import { createHomeStyles } from '@/assets/styles/home.styles';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import Header from '@/components/Header';
 
 const HomeScreen = () => {
-  const { toggleDarkMode } = useTheme();
+  const { toggleDarkMode, colors } = useTheme();
+
+  const homeStyles = createHomeStyles(colors);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.content}>HomeScreen</Text>
-      <Link href={"/settings"}>Go to settings</Link>
-      <TouchableOpacity onPress={toggleDarkMode}>
-        <Text>Toggle to change mode</Text>
-      </TouchableOpacity>
-    </View>
+    <LinearGradient colors={colors.gradients.background} style={homeStyles.container}>
+      <StatusBar barStyle={colors.statusBarStyle} />
+
+      <SafeAreaView style={homeStyles.safeArea}>
+        <Header />
+        <TouchableOpacity onPress={toggleDarkMode}>
+          <Text>Toggle to change mode</Text>
+        </TouchableOpacity>
+      </SafeAreaView>
+    </LinearGradient>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    gap: 10
-  },
-  content: {
-    fontSize: 22
-  }
-})
 
 export default HomeScreen
