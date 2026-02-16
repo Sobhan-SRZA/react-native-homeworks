@@ -2,6 +2,7 @@
   "expo": {
     "name": "lesson_2-todo_app",
     "slug": "lesson_2-todo_app",
+    "owner": "sobhan-srza",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -12,6 +13,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.sobhansrza.lesson_2todo_app",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -43,6 +45,11 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e0d16dc3-adee-4fe9-b317-d490a0c7b73e"
+      }
     }
   }
 }
