@@ -1,10 +1,13 @@
+import {
+    View,
+    Text
+} from 'react-native'
 import { createHomeStyles } from '@/assets/styles/home.styles'
-import { api } from '@/convex/_generated/api'
-import useTheme from '@/hooks/useTheme'
+import { LinearGradient } from 'expo-linear-gradient'
 import { Ionicons } from '@expo/vector-icons'
 import { useQuery } from 'convex/react'
-import { LinearGradient } from 'expo-linear-gradient'
-import { View, Text } from 'react-native'
+import { api } from '@/convex/_generated/api'
+import useTheme from '@/hooks/useTheme'
 
 const Header = () => {
     const { colors } = useTheme()
